@@ -1,17 +1,18 @@
 Summary:	ACTOS - Asterisk Configuration Tool Open Source
 Summary(pl):	ACTOS - Narzêdzie do konfiguracji Asteriska
 Name:		actos
-Version:	2.1
+Version:	2.25
 Release:	0.1
 License:	GPL v2
 Group:		Applications/Communications
 Source0:	http://www.derrier.com/pierre/code/%{name}-%{version}.tar.gz
-Patch0:         %{name}-dont_use_X_server.patch
+# Source0-md5:	c449a769bc527210f7dae98cef5b1666
 URL:		http://www.derrier.com/pierre/code/actos.html
 BuildRequires:	python >= 1:2.3
 BuildRequires:	python-pygtk-glade >= 2.0
 BuildRequires:	python-pygtk-gtk >= 2.0
 BuildRequires:	rpm-pythonprov
+%pyrequires_eq	python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,25 +32,35 @@ Asteriska.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
 
 %build
-python setup.py clean
 python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 python setup.py install \
 	--root $RPM_BUILD_ROOT
+
+%py_postclean
+
+mv -f $RPM_BUILD_ROOT%{_bindir}/{actos.py,actos}
+rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/{AUTHORS,CHANGELOG,COPYING,INSTALL,KNOWN_BUGS,README,TODO}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc KNOWN_BUGS README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
+%doc AUTHORS CHANGELOG KNOWN_BUGS README TODO
+%attr(755,root,root) %{_bindir}/actos
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*.def
+%{_datadir}/%{name}/actos.conf
+%{_datadir}/%{name}/scripts
+%{_datadir}/%{name}/en.help
+%lang(fr) %{_datadir}/%{name}/fr.help
+%dir %{_datadir}/%{name}/glade
+%{_datadir}/%{name}/glade/actos_en.glade
+%lang(fr) %{_datadir}/%{name}/glade/actos_fr.glade
 %{py_sitescriptdir}/actos_modules
