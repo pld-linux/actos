@@ -1,5 +1,5 @@
 Summary:	ACTOS - Asterisk Configuration Tool Open Source
-Summary(pl.UTF-8):   ACTOS - Narzędzie do konfiguracji Asteriska
+Summary(pl.UTF-8):	ACTOS - Narzędzie do konfiguracji Asteriska
 Name:		actos
 Version:	2.25
 Release:	0.1
