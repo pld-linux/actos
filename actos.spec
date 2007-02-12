@@ -1,5 +1,5 @@
 Summary:	ACTOS - Asterisk Configuration Tool Open Source
-Summary(pl):	ACTOS - Narzêdzie do konfiguracji Asteriska
+Summary(pl.UTF-8):   ACTOS - NarzÄ™dzie do konfiguracji Asteriska
 Name:		actos
 Version:	2.25
 Release:	0.1
@@ -22,12 +22,12 @@ and that means a bit complex... ACTOS helps the user through the
 choice of the options and generate the text configuration files needed
 by Asterisk.
 
-%description -l pl
-ACTOS to graficzne narzêdzie z intuicyjnym interfejsem do
+%description -l pl.UTF-8
+ACTOS to graficzne narzÄ™dzie z intuicyjnym interfejsem do
 konfigurowania Asteriska - linuksowej centralki telefonicznej (PBX) o
-otwartych ¼ród³ach. Asterisk jest bardzo potê¿nym narzêdziem, a przy
-tym do¶æ z³o¿onym... ACTOS pomaga u¿ytkownikowi w wyborze opcji i
-wygenerowaniu tekstowych plików konfiguracyjnych wymaganych przez
+otwartych ÅºrÃ³dÅ‚ach. Asterisk jest bardzo potÄ™Å¼nym narzÄ™dziem, a przy
+tym doÅ›Ä‡ zÅ‚oÅ¼onym... ACTOS pomaga uÅ¼ytkownikowi w wyborze opcji i
+wygenerowaniu tekstowych plikÃ³w konfiguracyjnych wymaganych przez
 Asteriska.
 
 %prep
