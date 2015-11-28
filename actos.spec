@@ -34,12 +34,12 @@ Asteriska.
 %setup -q -n %{name}
 
 %build
-python setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%py_install \
 	--root $RPM_BUILD_ROOT
 
 %py_postclean
