@@ -8,6 +8,7 @@ Group:		Applications/Communications
 Source0:	http://www.derrier.com/pierre/code/%{name}-%{version}.tar.gz
 # Source0-md5:	c449a769bc527210f7dae98cef5b1666
 URL:		http://www.derrier.com/pierre/code/actos.html
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python >= 1:2.3
 BuildRequires:	python-pygtk-glade >= 2.0
 BuildRequires:	python-pygtk-gtk >= 2.0
